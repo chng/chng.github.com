@@ -1,79 +1,12 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+---
+layout: page
+title: Lastest Posts
+description: "贪 嗔 痴.<br>try tap ',' '.' 'ESC'."
+tags: [Jekyll, theme, themes, responsive, blog, minimalism]
+---
 
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
-
-    <title>chng</title>
-  </head>
-
-  <body>
-
-    <header>
-      <div class="container">
-	<table border="0" width="100%">
-  	<tr height='100%'>
-    		<td width='80%'>
-        		<h1>chng</h1>
-       			<h2>吴丝蜀桐张高秋  空山凝云颓不流</h2>
-    		</td>
-    		<td>
-			<img hidden src='images/head.jpg' width='80%'/>
-		</td>
-  	</tr>
-	</table>
-
-
-	<!-- <img src='images/head.jpg' width='20%'/> -->
-        <section id="downloads">
-          <a href="https://github.com/chng" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
-        </section>
-      </div>
-    </header>
-
-    <div class="container">
-      <section id="main_content">
-        <h3>
-          <a id="welcome-to-zhicheng-zengs-homepages-zalexzenggmailcom" class="anchor" href="#welcome-to-zhicheng-zengs-homepages-zalexzenggmailcom" aria-hidden="true"><span class="octicon octicon-link"></span></a>Zhicheng Zeng @WilNA <a href="mailto:z.alex.zeng@gmail.com">z.alex.zeng@gmail.com</a>
-        </h3>
-        
-        Click <a href='http://cnblogs.com/zhchngzng'>here</a>, bring u to my blog
-        <br><br>
-        <p align='justify'>
-	I'm in Dalian University of Technology and work for Alibaba. My research interest includes wireless access control and wireless network measurement, especially with physical layer information. </p>
-        <!--
-        <h3>
-        <u>
-        <a id="main-research-project" class="anchor" href="#main-research-project" aria-hidden="true"><span class="octicon octicon-link"></span></a>Main Research Project</h3>
-        </u>
-        <p><font size='2'> Bingxian Lu, Zhicheng Zeng, Lei Wang, Brian Peck, and Daji Qiao. CLaWa: Crowdsourced Location Aware Wi-Fi Access Control. </font></p>
-        
-        <p><font size='1'> We have build a real-time platform to collect the channel state information. With this abundant information from the physical layer, we design location distinction models to enhance the wireless access control security. </font></p>
-         -->
-         
-        <h3><u>
-        <a id="publications" class="anchor" href="#publications" aria-hidden="true"><span class="octicon octicon-link"></span></a>Publications</h3>
-        </u>
-        <p align='justify'><font color='green' size='1.3'>[1]</font><font size='2'> Bingxian Lu, Zhicheng Zeng, Lei Wang, Brian Perk, Daji Qiao, Michael Segal. Confining Wi-Fi Coverage: A Crowdsourced Method Using Physical Layer Information. IEEE SECON'16</font></p>
-
-        <p align='justify'><font color='green' size='1.3'>[2]</font><font size='2'> Bingxian Lu, Zhicheng Zeng, Lei Wang, Brian Perk, Daji Qiao. Poster: CLaWa: Crowdsourced Location Aware Wi-Fi Access Control. MobiCom'15</font></p>
-        
-        <p align='justify'><font color='green' size='1.3'>[3]</font><font size='2'> Zhicheng Zeng, Ming Zhu, Zhaoshu Tang and Honglian Ma. A Single Access Point Based Traffic Control System with Passive Measurement. FCST'15</font></p>
-        
-        <p align='justify'><font color='green' size='1.3'>[4]</font><font size='2'> Zhicheng Zeng, Ming Zhu, Lei Wang, Zhenquan Qin, Zhaoshu Tang and Honglian Ma.	Impact of Directional Antenna on Physical Layer Authentication. FCST'15</font></p>
-        
-        <p align='justify'><font color='green' size='1.3'>[5]</font><font size='2'> Ming Zhu, Zhicheng Zeng, Lei Wang, Zhenquan Qin, An Pan, Yuanyuan Zhang and Lei Shu. A Measurement Study of a Campus Wi-Fi Network with Mixed Handheld and Non-handheld Traffic. IEEE CCECE'15.</font></p>
-
-        <p align='justify'><font color='green' size='1.3'>[6]</font><font size='2'> Zhicheng Zeng, Ming Zhu, Hong Yu, Honglian Ma. Minimum Similarity Sampling Scheme for Nyström Based Spectral Clustering on Large Scale High-Dimensional Data. IEA/AIE'14. Kaohsiung, Taiwan, 2014, 260-269. </font></p>
-        
-
-      </section>
-    </div>
-
-    
-  </body>
-</html>
+<ul id="post-list" class="post-list">
+{% for post in site.posts %} 
+  <li><article><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }} <span class="entry-date"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time></span></a></article></li>
+{% endfor %}
+</ul>

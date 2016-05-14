@@ -1,0 +1,10 @@
+<footer id="footer" role="footer">
+<h1 class="footer-title">
+  <span>&copy; {{ site.time | date: '%Y' }} <a href="{{site.baseurl}}/about">{{ site.author }}</a>. Powered by <a href="http://jekyllrb.com">Jekyll</a> &amp; <a href="http://github.com">Github</a>. Thanks to <a href="github.com/Sidong">sidong</a> for this template</span>
+</h1>
+<nav class="social-nav">
+  {% for element in site.contacts %}
+  <span class="social-icon"><a href="{{element.url}}"><i class="fa {{element.icon}} fa-lg"></i> {{element.type}}</a></span>
+  {% endfor %}
+</nav><!-- /.social-icons -->
+</footer>

@@ -1,0 +1,21 @@
+<!-- navigation -->
+<a id="nav-button" class="nav-button" href="#" data-state="closed"><i id="nav-tag" class="fa fa-bars fa-2x"></i></a>
+
+<nav id="nav-main" class="nav-bar">
+	<img src='{{site.baseurl}}{{site.logo}}' alt="logo">
+	<h1 id='author'><span class="brace">{</span>#{{site.author}}<span class="brace">}</span></h1>
+	<ul>
+		{% for link in site.links %}
+		<li>
+			{% case link.link %}
+			{% when 'search' %}
+			<a id="search-btn" href="#"><i class="fa {{link.icon}} fa-lg"></i>{{ link.title }}</a>
+			{% when 'feed' %}
+			<a href="{{site.baseurl}}{{link.url}}" title="Atom/RSS feed"><i class="fa {{link.icon}} fa-lg"></i>{{ link.title }}</a>
+			{% when 'normal' %}
+			<a href="{{site.baseurl}}{{link.url}}"><i class="fa {{link.icon}} fa-lg"></i>{{ link.title }}</a>
+			{% endcase %} 
+		</li>
+    {% endfor %}
+	</ul>
+</nav><!-- end navigation -->

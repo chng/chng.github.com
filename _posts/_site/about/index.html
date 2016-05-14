@@ -1,0 +1,348 @@
+<h2 id="section">目录</h2>
+<hr />
+<ul>
+  <li><a href="#id-first">截图</a></li>
+  <li><a href="#id-0">版本</a></li>
+  <li><a href="#id-1">无聊的比喻</a></li>
+  <li><a href="#id-2">安装使用</a>
+    <ul>
+      <li>Git复制</li>
+      <li>替换个人信息</li>
+      <li>目录树</li>
+      <li>本地运行</li>
+      <li>http://0.0.0.0:4000/</li>
+    </ul>
+  </li>
+  <li><a href="#id-3">特性</a></li>
+  <li><a href="#id-4">响应式设计</a></li>
+  <li><a href="#id-5">快捷键</a></li>
+  <li><a href="#id-6">强大的搜索</a>
+    <ul>
+      <li>开启</li>
+      <li>搜索设置</li>
+      <li>模糊匹配</li>
+      <li>快速跳转</li>
+      <li><del>拼音搜索</del></li>
+      <li><del><code class="highlighter-rouge">Tag</code> 排序</del></li>
+    </ul>
+  </li>
+  <li><a href="#id-7">图片预览/异步加载</a></li>
+  <li><a href="#id-8">说好的细节</a></li>
+  <li><a href="#id-9">别人的东西</a></li>
+  <li><a href="#id-10">To-do-list</a></li>
+</ul>
+
+<hr />
+<h2 id="id-first">截图</h2>
+<p>先放几个截图看一看 <br />
+<img src="/assets/images/CMS/home.png" alt="" /><br />
+<img src="/assets/images/CMS/rwd-lg-2.png" alt="" /><br />
+<img src="/assets/images/CMS/rwd-sm-3.png" alt="" /></p>
+
+<hr />
+<h2 id="id-0">版本</h2>
+<p>目前为 V1.0</p>
+
+<hr />
+<h2 id="id-1">无聊的比喻</h2>
+<p>这是一个基于 <code class="highlighter-rouge">jekyll</code> 开发的 <code class="highlighter-rouge">Personal blog/CMS</code>。 <br />
+Blog，也称之为CMS(Content Management System)，内容管理系统，Blog常作为我们记录 <em>学习</em>/<em>生活</em> 的收藏夹，可以比喻为一个储物柜。 <br />
+一个比较好用的 <em>静态</em>“储物柜”，要满足以下基本功能：</p>
+
+<ul>
+  <li><code class="highlighter-rouge">分类</code> # 为所有扔进去的物品分类、打标签，这是外套、那是内衣，这是技术总结、那是日记，这应该打上Git标签、那应该有个Web标签，诸如此类。</li>
+  <li><code class="highlighter-rouge">快速搜索</code> # 起晚了，匆匆忙忙翻找储物柜，找了半天没找着袜子，都放哪去了？一个良好整理的储物柜，应该具备快速搜索功能，即便是静态的 <code class="highlighter-rouge">jekyll</code>，也有办法通过 <code class="highlighter-rouge">liquid</code> 模板在前期生成一个简易使用的小数据库，以提供搜索功能。</li>
+  <li><code class="highlighter-rouge">快速取出</code> # 找了半天终于找到你的袜子，你发现怎么也拉也拉不出来，袜子被什么东西勾住了，你不得不把其他物品一个一个往外边清，最后再把袜子拿出来，多麻烦。同样地，你要点击归档，移动你的鼠标，准确定位，再单击打开你要的页面，这太麻烦了。我们需要一种 <code class="highlighter-rouge">快速跳转</code> 至搜索结果页面的功能。</li>
+  <li><code class="highlighter-rouge">自适应</code> # 什么意思？储物柜还有自适应的？是的，你没有听错，别忘了除了你，还有其他人也要使用储物柜，他们有小孩子（手机），大孩子（pad），大人（PC），什么？还有老人（…我也不知道拿什么来比喻）。为小孩子服务时，储物柜不能太高、要易于使用，为大孩子服务时，他们够得着，不需要太矮，为大人服务时，想办法满足他们吧。所以，你想要有一个 <code class="highlighter-rouge">响应式</code> 储物柜。</li>
+  <li><code class="highlighter-rouge">简洁</code> # 简洁的外表是你低端的宣扬，它要能符合你的审美观。</li>
+  <li><code class="highlighter-rouge">定制</code> # 既然是属于个人物品，当然要可定制呀，不然谁买你家储物柜。我们需要在储物柜刻上个人信息，需要不一样的分类方法，需要符合个人的搜索方法（模糊匹配、基于标题、标签搜索…）…</li>
+  <li><code class="highlighter-rouge">...</code> # 还有很多很多</li>
+</ul>
+
+<hr />
+<h2 id="id-2">安装使用</h2>
+<p>使用这个主题，快速搭建你的blog。</p>
+
+<p><strong>Git复制</strong> <br />
+&gt; git clone git@github.com:Sidong/Powerful-CMS.git</p>
+
+<p><strong>替换个人信息</strong></p>
+
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="c1"># 代码高亮，需要安装rdiscount</span>
+<span class="s">markdown</span><span class="pi">:</span> <span class="s">rdiscount</span>
+<span class="s">pygments</span><span class="pi">:</span> <span class="s">true</span>
+
+<span class="c1"># https://github.com/sidong/Powerful-CMS/Permalinks</span>
+<span class="c1"># 文章结构 /分类/标题</span>
+<span class="s">permalink</span><span class="pi">:</span>   <span class="s">/:categories/:title/</span>
+<span class="s">url</span><span class="pi">:</span> <span class="s">http://Sidong.github.io/Powerful-CMS</span>
+<span class="c1"># 部署在Git上的repo名字</span>
+<span class="s">baseurl</span><span class="pi">:</span> <span class="s">/Powerful-CMS</span>
+<span class="c1"># 名字</span>
+<span class="s">author</span><span class="pi">:</span> <span class="s">Sidong</span>
+<span class="c1"># 邮箱</span>
+<span class="s">gmail</span><span class="pi">:</span> <span class="s1">'</span><span class="s">sidongh@gmail.com'</span>
+<span class="c1"># 个人logo文件路径</span>
+<span class="s">logo</span><span class="pi">:</span> <span class="s">/assets/images/logo.jpg</span>
+<span class="c1"># 站点开始时间</span>
+<span class="s">time</span><span class="pi">:</span> <span class="s">2014-01-01</span>
+
+<span class="c1"># 个人信息，用于footer</span>
+<span class="c1"># contain:github, gmail, twitter, sina; lack:gplus</span>
+<span class="s">contacts</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">type</span><span class="pi">:</span> <span class="s">github</span>
+    <span class="s">icon</span><span class="pi">:</span> <span class="s">fa-github</span>
+    <span class="s">url</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://github.com/Sidong'</span>
+  <span class="pi">-</span> <span class="s">type</span><span class="pi">:</span> <span class="s">gmail</span>
+    <span class="s">icon</span><span class="pi">:</span> <span class="s">fa-pencil</span>
+    <span class="s">url</span><span class="pi">:</span> <span class="s1">'</span><span class="s">mailto:sidongh@gmail.com'</span>
+  <span class="pi">-</span> <span class="s">type</span><span class="pi">:</span> <span class="s">twitter</span>
+    <span class="s">icon</span><span class="pi">:</span> <span class="s">fa-twitter</span>
+    <span class="s">url</span><span class="pi">:</span> <span class="s1">'</span><span class="s">https://twitter.com/stone_style'</span>
+  <span class="pi">-</span> <span class="s">type</span><span class="pi">:</span> <span class="s">sina</span>
+    <span class="s">icon</span><span class="pi">:</span> <span class="s">fa-weibo</span>
+    <span class="s">url</span><span class="pi">:</span> <span class="s1">'</span><span class="s">http://weibo.com/u/1879863147?s=6uyXnP'</span>
+
+<span class="c1"># 链接，用于导航菜单</span>
+<span class="c1"># 包含 about（关于）/articles（文章归档）/tags（标签分类）/feed（feed源）/search（搜索功能）</span>
+<span class="s">links</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">title</span><span class="pi">:</span> <span class="s">About</span>
+    <span class="s">url</span><span class="pi">:</span> <span class="s">/about</span>
+    <span class="s">icon</span><span class="pi">:</span> <span class="s">fa-anchor</span>
+    <span class="s">link</span><span class="pi">:</span> <span class="s">normal</span>
+  <span class="pi">-</span> <span class="s">title</span><span class="pi">:</span> <span class="s">Articles</span>
+    <span class="s">url</span><span class="pi">:</span> <span class="s">/</span>
+    <span class="s">icon</span><span class="pi">:</span> <span class="s">fa-bookmark</span>
+    <span class="s">link</span><span class="pi">:</span> <span class="s">normal</span>
+  <span class="pi">-</span> <span class="s">title</span><span class="pi">:</span> <span class="s">tags</span>
+    <span class="s">url</span><span class="pi">:</span> <span class="s">/tags</span>
+    <span class="s">icon</span><span class="pi">:</span> <span class="s">fa-tags</span>
+    <span class="s">link</span><span class="pi">:</span> <span class="s">normal</span>
+  <span class="pi">-</span> <span class="s">title</span><span class="pi">:</span> <span class="s">Feed</span>
+    <span class="s">url</span><span class="pi">:</span> <span class="s">/feed.xml</span>
+    <span class="s">icon</span><span class="pi">:</span> <span class="s">fa-rss-square</span>
+    <span class="s">normalLink</span><span class="pi">:</span> <span class="s">false</span>
+    <span class="s">link</span><span class="pi">:</span> <span class="s">feed</span>
+  <span class="pi">-</span> <span class="s">title</span><span class="pi">:</span> <span class="s">Search</span>
+    <span class="s">icon</span><span class="pi">:</span> <span class="s">fa-search</span>
+    <span class="s">normalLink</span><span class="pi">:</span> <span class="s">false</span>
+    <span class="s">link</span><span class="pi">:</span> <span class="s">search</span>
+
+<span class="s">safe</span><span class="pi">:</span> <span class="s">false</span>
+<span class="c1"># Blog标题</span>
+<span class="s">title</span><span class="pi">:</span> <span class="s">Sidong</span>
+<span class="c1"># Blog描述</span>
+<span class="s">description</span><span class="pi">:</span> <span class="s">Sidong's Powerful CMS</span>
+
+<span class="c1"># 开启搜索功能</span>
+<span class="s">search</span><span class="pi">:</span> <span class="s">true</span>
+
+<span class="c1"># 开启图片预览功能，未实现，设置为false</span>
+<span class="s">imgPreview</span><span class="pi">:</span> <span class="s">false</span>
+
+<span class="c1"># 多说评论</span>
+<span class="s">comments</span><span class="pi">:</span> <span class="s">false</span>
+
+<span class="c1"># 时间显示</span>
+<span class="s">showTime</span><span class="pi">:</span> <span class="s">true</span></code></pre></figure>
+
+<p><strong>目录树</strong> <br />
+将文件夹 <code class="highlighter-rouge">_post</code> 替换为你的 <code class="highlighter-rouge">_post</code>，注意图片文件夹路径为 <code class="highlighter-rouge">assets/imgages/</code></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>.
+├── 404.html  // 404页面
+├── README.md
+├── _config.yml  // 配置文件
+├── _drafts  // 草稿
+├── _includes  // 构成完整页面的页面元素
+│   ├── browser-upgrade.html
+│   ├── disqus_comments.html
+│   ├── footer.html
+│   ├── head.html
+│   ├── imgPreview.html
+│   ├── navigation.html
+│   ├── scripts.html
+│   └── search.html
+├── _layouts  // 模板，其中post文章用post.html模板，其他用page.html模板
+│   ├── page.html
+│   └── post.html
+├── _posts  // 个人文章
+│   ├── 2014-01-01-about.md
+│   └── ...
+├── _site
+├── assets
+│   ├── css  // css文件
+│   │   ├── font-awesome.css
+│   │   ├── highlight.css
+│   │   ├── main.css
+│   │   ├── normalize.css
+│   │   └── typo.css
+│   ├── fonts  // FontAwesome字体文件
+│   │   ├── FontAwesome.otf
+│   │   ├── fontawesome-webfont.eot
+│   │   ├── fontawesome-webfont.svg
+│   │   ├── fontawesome-webfont.ttf
+│   │   └── fontawesome-webfont.woff
+│   ├── images  // 图片目录
+│   │   └── logo.jpg  // 个人logo
+│   └── js  // js文件
+│       ├── jekyll-search.js
+│       ├── main.js
+│       ├── pinyin.js
+│       ├── plugins.js
+│       ├── util.js
+│       └── vendor
+│           ├── jquery-1.11.0.min.js
+│           └── modernizr-2.7.1.min.js
+├── crossdomain.xml
+├── favicon.ico
+├── feed.xml
+├── index.html  // 首页
+├── search.json  // post数据库
+└── tag.html  // tag页面
+</code></pre>
+</div>
+
+<p><strong>本地运行</strong> <br />
+注意在本地运行，将 <code class="highlighter-rouge">site.baseurl</code> 设置为空，<code class="highlighter-rouge">&amp;</code> 为在后台运行，不中断终端使用，使用linux <code class="highlighter-rouge">jobs</code> 目录管理后台 <br />
+&gt; jekyll serve –baseurl ‘’ –watch –port 4000 &amp;</p>
+
+<p><strong>http://0.0.0.0:4000/</strong> <br />
+<img src="/assets/images/CMS/home.png" alt="" /></p>
+
+<hr />
+<h2 id="id-3">特性</h2>
+<p>设计这个主题，（部分）实现以下特征：</p>
+
+<ul>
+  <li>响应式设计（欢迎帮助测试）</li>
+  <li>HTML5语义标签</li>
+  <li>简洁的设计</li>
+  <li>快速搜索</li>
+  <li>在搜索结果中快速跳转</li>
+  <li>自定义搜索条件（可以基于日期、标题、标签等搜索）</li>
+  <li>自定义搜索结果模糊匹配</li>
+  <li><del>增加拼音搜索匹配</del></li>
+  <li>搜索结果利用方向键快速移动</li>
+  <li>搜索结果Enter在原窗口跳转，Opt+Enter打开新窗口跳转（有些浏览器需要用户允许）</li>
+  <li>快捷键呼出功能，<code class="highlighter-rouge">.</code> 呼出菜单，<code class="highlighter-rouge">,</code> 呼出搜索栏</li>
+  <li>配置文件可开启/关闭搜索功能</li>
+  <li>修改配置文件快速替换成你的blog</li>
+  <li>代码高亮</li>
+</ul>
+
+<hr />
+<h2 id="id-4">响应式设计</h2>
+<p><strong>大</strong><br />
+<img src="/assets/images/CMS/rwd-lg-1.png" alt="" /><br />
+<img src="/assets/images/CMS/rwd-lg-2.png" alt="" /><br />
+<strong>中</strong>
+<img src="/assets/images/CMS/rwd-mid.png" alt="" /><br />
+<strong>小</strong>
+<img src="/assets/images/CMS/rwd-sm-1.png" alt="" /><br />
+<img src="/assets/images/CMS/rwd-sm-2.png" alt="" /><br />
+<img src="/assets/images/CMS/rwd-sm-3.png" alt="" /><br />
+<img src="/assets/images/CMS/rwd-sm-4.png" alt="" /></p>
+
+<hr />
+<h2 id="id-5">快捷键</h2>
+<p>在当前页面试试按下 <code class="highlighter-rouge">.</code> 呼出菜单，按下 <code class="highlighter-rouge">,</code> 呼出搜索。当然菜单和搜索页提供鼠标点击呼出。点击左上角呼出菜单，点击菜单 <i class="fa fa-search fa-lg"></i> <code class="highlighter-rouge">search</code> 项目呼出搜索。点击 <i class="fa fa-times fa-lg"></i> 关闭对应的菜单/搜索界面。在搜索界面，按下 <code class="highlighter-rouge">ESC</code> 关闭搜索界面。</p>
+
+<hr />
+<h2 id="id-6">强大的搜索</h2>
+<p><strong>开启</strong> <br />
+首先记得在 <code class="highlighter-rouge">_config.yml</code> 开启搜索功能 <br />
+&gt; search: true</p>
+
+<p><strong>搜索设置</strong> <br />
+在文件 <code class="highlighter-rouge">scripts.html</code> 进行搜索设置</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nb">window</span><span class="p">.</span><span class="nx">JekyllSearch</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span>
+<span class="p">{</span> 
+  <span class="c1">// 搜索输入框元素</span>
+  <span class="na">searchInput</span><span class="p">:</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">".search-field"</span><span class="p">),</span>
+  <span class="c1">// 数据库文件路径</span>
+  <span class="na">jsonFile</span><span class="p">:</span> <span class="s1">'/search.json'</span><span class="p">,</span>
+  <span class="c1">// 替换模板{xx}</span>
+  <span class="na">template</span><span class="p">:</span> <span class="s2">"&lt;li&gt;&lt;article&gt;&lt;a href='{url}'&gt;&lt;i class='fa fa-share'&gt;&lt;/i&gt; {title}&lt;span class='entry-date'&gt;&lt;time datetime='{date}'&gt;{date}&lt;/time&gt;&lt;/span&gt;&lt;/a&gt;&lt;/article&gt;&lt;/li&gt;"</span><span class="p">,</span>
+  <span class="c1">// 搜索结果元素</span>
+  <span class="na">searchResults</span><span class="p">:</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">".search-results"</span><span class="p">),</span>
+  <span class="c1">// 搜索结果标题</span>
+  <span class="na">searchResultsHeader</span><span class="p">:</span> <span class="s2">"&lt;h4&gt;Search results&lt;/h4&gt;"</span><span class="p">,</span>
+  <span class="c1">// 搜索项目数量</span>
+  <span class="na">limit</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
+  <span class="c1">// 模糊匹配</span>
+  <span class="na">fuzzy</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="c1">// 无搜索结果提示</span>
+  <span class="na">noResults</span><span class="p">:</span> <span class="s2">"&lt;p&gt;Nothing matched your query&lt;/p&gt;"</span><span class="p">,</span>
+  <span class="c1">// 搜索要匹配项目，与search.json对应，这里只搜索标题和日期</span>
+  <span class="na">matchItems</span><span class="p">:</span> <span class="p">{</span><span class="s1">'title'</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="s1">'category'</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="s1">'date'</span><span class="p">:</span><span class="kc">true</span><span class="p">}</span>
+<span class="p">});</span></code></pre></figure>
+
+<p><strong>模糊匹配</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">js</code> 能够匹配任意包含字符 <code class="highlighter-rouge">j</code> 和 <code class="highlighter-rouge">s</code> 的项目，<code class="highlighter-rouge">j</code> 一定要在 <code class="highlighter-rouge">s</code> 前面</li>
+  <li><code class="highlighter-rouge">.</code> 可指代任意字符，<code class="highlighter-rouge">..........</code> 匹配包含长度大于等于10个字符的项目</li>
+</ul>
+
+<p><strong>快速跳转</strong></p>
+
+<p>在搜索结果中，按方向键 <code class="highlighter-rouge">↑</code> 和 <code class="highlighter-rouge">↓</code> 可以选择项目，按下 <code class="highlighter-rouge">Enter</code> 键在当前窗口跳转至选择的项目（不会跳到鼠标在项目上引发的高亮），按下 <code class="highlighter-rouge">Opt</code> + <code class="highlighter-rouge">Enter</code> 会在新窗口打开页面。</p>
+
+<p><strong><del>拼音搜索</del></strong> <br />
+:( 还没实现。</p>
+
+<p><strong><del><code class="highlighter-rouge">Tag</code> 排序</del></strong> <br />
+:( 搜索结果按 <code class="highlighter-rouge">Tag</code> 排序，还没实现！</p>
+
+<hr />
+<h2 id="id-7">图片预览/异步加载</h2>
+<p>:( 还没想好怎么实现！</p>
+
+<hr />
+<h2 id="id-8">说好的细节</h2>
+<p><strong>@one</strong> <br />
+每次进入搜索界面，都会自动对焦文本输入框，并且文本输入框文本自动全选，方便下一次搜索。 <br />
+<img src="/assets/images/CMS/tip-1.png" alt="" /></p>
+
+<p><strong>@two</strong> <br />
+在按下方向键 <code class="highlighter-rouge">↑</code> 和 <code class="highlighter-rouge">↓</code> 选择结果时，屏蔽方向键默认移动文本光标，但是 <code class="highlighter-rouge">←</code> <code class="highlighter-rouge">→</code> 可以控制文本光标移动。<br />
+<img src="/assets/images/CMS/tip-2.png" alt="" /></p>
+
+<p><strong>@three</strong> <br />
+退出搜索后，再次进入搜索状态保持着。 <br />
+<img src="/assets/images/CMS/tip-3.png" alt="" /></p>
+
+<p><strong>@four</strong> <br />
+所有的快捷键均有实体按钮支持。 <br />
+<img src="/assets/images/CMS/btn-1.png" alt="" /><br />
+<img src="/assets/images/CMS/btn-2.png" alt="" /><br />
+<img src="/assets/images/CMS/btn-3.png" alt="" /></p>
+
+<p><strong>@five</strong> <br />
+每一篇文章都在右上角给出描述、日期、标签、作者。<br />
+并且支持多标签支持，点击标签前往标签分类。如本文： <br />
+<img src="/assets/images/CMS/tag-1.png" alt="" /><br />
+<img src="/assets/images/CMS/tag-2.png" alt="" />
+:( <del>标签排序</del></p>
+
+<hr />
+<h2 id="id-9">别人的东西¶</h2>
+<p>借鉴了，感谢!</p>
+
+<ul>
+  <li><a href="http://fortawesome.github.io/Font-Awesome/">FontAsesome</a></li>
+  <li><a href="https://github.com/christian-fei/Simple-Jekyll-Search">Simple-Jekyll-Search</a></li>
+  <li><a href="http://typo.sofish.de/">typo.css</a></li>
+</ul>
+
+<hr />
+<h2 id="id-10">To-do-list</h2>
+
+<ul>
+  <li>完成<a href="#id-3">特性</a>未完成的任务。</li>
+  <li>重构css文件。</li>
+</ul>
+
+<p>这只是一个初稿，本项目还在更新中。欢迎拍砖。</p>

@@ -1,0 +1,174 @@
+<script src="{{ site.baseurl }}/assets/js/util.js"></script>
+<!-- <script src="{{ site.baseurl }}assets/js/pinyin.js"></script> -->
+<script src="{{ site.baseurl }}/assets/js/main.js"></script>
+<script src="{{ site.baseurl }}/assets/js/jekyll-search.js"></script>
+
+{% if site.search %}
+<!-- Jekyll Simple Search option -->
+<script>
+(function(){
+  window.JekyllSearch.init(
+  { 
+    // 搜索输入框元素
+    searchInput: document.querySelector(".search-field"),
+    // 数据库文件路径
+    jsonFile: '{{ site.baseurl }}/search.json',
+    // 替换模板{xx}
+    template: "<li><article><a href='{url}'><i class='fa fa-share'></i> {title}<span class='entry-date'><time datetime='{date}'>{date}</time></span></a></article></li>",
+    // 搜索结果元素
+    searchResults: document.querySelector(".search-results"),
+    // 搜索结果标题
+    searchResultsHeader: "<h4>Search results</h4>",
+    // 搜索项目数量
+    limit: 12,
+    // 模糊匹配
+    fuzzy: true,
+    // 无搜索结果提示
+    noResults: "<p>Nothing matched your query</p>",
+    // 搜索要匹配项目，与search.json对应
+    matchItems: {'title':true,'category':false,'date':true}
+  });
+
+  // shortcut
+  window.EventUtil.addHandler(window, 'keypress', shortcut);
+  var search = document.getElementById('search-wrapper');
+  var searchInput = document.querySelector(".search-field");
+  var navBtn = document.getElementById('nav-button');
+
+  // 切换search状态; 
+  function toggleSearch() {
+    classie.toggle( search, 'active' );      
+    if (classie.hasClass(search, 'active')) {
+      searchInput.focus();
+      // 在文本获得焦点时选择文本；
+      searchInput.select();
+    } else {
+      searchInput.blur();
+    }
+  }
+  function shortcut(event) {
+    var tmp = window.EventUtil.getCharCode(event);
+    tmp = String.fromCharCode(tmp);
+    // ','按键触发;
+    if (tmp == ',' && !classie.hasClass(searchInput, 'active')) {
+      toggleSearch();
+      window.EventUtil.preventDefault(event);
+    } 
+    // '.'按键触发;
+    else if (tmp == '.' && !classie.hasClass(search, 'active') 
+      && document.activeElement.type != 
+      ('text'&&'textarea'&&'email'&&'url'&&'number'&&'range'&&'datetime'&&'datetime-local'&&'date'&&'month'&&'week'&&'time'&&'password'&&'search'&&'tel') ) {
+      var click = document.createEvent('MouseEvents');
+      click.initMouseEvent('click',true,true,document.defaultView,0,0,0,0,0,false,false,false,false,0,null);
+      navBtn.dispatchEvent(click);
+    }
+  }
+  
+  // ESC handler;
+  window.EventUtil.addHandler(window, 'keydown', escHandler);
+  function escHandler(event) {
+    if (event.keyCode == 27 && classie.hasClass(search, 'active')) {
+      toggleSearch();
+      // searchInput.blur();
+      // classie.removeClass( search, 'active' );
+    }
+  }
+  // 点击search菜单;
+  var searchBtn = document.getElementById('search-btn');
+  window.EventUtil.addHandler(searchBtn, 'click', toggleSearch);
+
+  // 点击search-X按钮;
+  var searchOff = document.getElementById('search-off');
+  window.EventUtil.addHandler(searchOff, 'click', toggleSearch);
+
+  // disable scroll;
+  window.EventUtil.addHandler(window, 'scroll', disableScroll);
+  function disableScroll(event) {
+    if (classie.hasClass(search, 'active')) {
+      // console.log("scroll");
+      // window.EventUtil.preventDefault(event);
+      // window.EventUtil.stopPropagation(event);
+    }
+  }
+})();
+</script>
+{% endif %}
+
+{% if site.imgPreview %}
+<script>
+(function() {
+  // 图片预览;
+  var imgBox = document.getElementById('imgPreview');
+  var imgs = document.querySelectorAll('#main img');
+  console.log(imgs.length);
+  classie.each(imgs, imgHandler, window, false);
+  function imgHandler(img, index, imgs) {
+    window.EventUtil.addHandler(img, 'click', preview);
+  }
+  function preview(event) {
+    classie.addClass(imgBox, 'active');
+    var img = window.EventUtil.getTarget(event);
+    imgBox.src = img.src;
+    console.log(img);
+    console.log(imgBox);
+    // window.EventUtil.getTarg
+  }
+})();
+</script>
+{% endif %}
+
+{% if site.showTime %}
+<script>
+(function (){
+  var timeSpan = document.getElementById('timeSpan');
+  console.log(timeSpan);
+  function setTimeSpan(){
+    var date = new Date();
+    timeSpan.innerHTML = date.format('MM-dd hh:mm:ss');
+    // timeSpan.innerHTML = date.format('yyyy-MM-dd hh:mm:ss');
+    // timeSpan.innerText = date.toLocaleString();
+    // timeSpan.innerHTML = date.toLocaleString();
+  }
+  Date.prototype.format = function(format)
+  {
+  var o =
+    {
+        "M+" : this.getMonth()+1, //month
+        "d+" : this.getDate(),    //day
+        "h+" : this.getHours(),   //hour
+        "m+" : this.getMinutes(), //minute
+        "s+" : this.getSeconds(), //second
+        "q+" : Math.floor((this.getMonth()+3)/3),  //quarter
+        "S" : this.getMilliseconds() //millisecond
+    }
+    if(/(y+)/.test(format))
+    format=format.replace(RegExp.$1,(this.getFullYear()+"").substr(4 - RegExp.$1.length));
+    for(var k in o)
+    if(new RegExp("("+ k +")").test(format))
+    format = format.replace(RegExp.$1,RegExp.$1.length==1 ? o[k] : ("00"+ o[k]).substr((""+ o[k]).length));
+    return format;
+  }
+  setTimeSpan();
+  setInterval(setTimeSpan,1000);
+})();
+</script>
+{% endif %}
+
+{% if site.google_analytics %}
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl = 
+ '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', '{{ site.google_analytics }}']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+{% endif %}
+{% if page.comments %}{% include disqus_comments.html %}{% endif %}

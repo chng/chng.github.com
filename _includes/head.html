@@ -1,0 +1,25 @@
+<meta charset="utf-8" />
+<meta name="description" content="Sidong's CMS"/>
+<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/typo.css" />
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/font-awesome.css">
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css" />
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/highlight.css" />
+
+<title>{% if page.title %}{{ page.title }} &#8211; {% endif %}{{ site.title }}</title>
+<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+{% if page.tags %}<meta name="keywords" content="{{ page.tags | join: ', ' }}">{% endif %}
+
+<!-- 404页面5s自动跳转 -->
+{% if page.url == "/404.html" %}
+<meta http-equiv="refresh" content="5; url={{site.baseurl}}/">
+{% endif %}
+
+<!-- Load Modernizr -->
+<!-- <script src="{{ site.baseurl }}/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script> -->
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="{{ site.baseurl }}/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="{{ site.baseurl }}/favicon.ico">

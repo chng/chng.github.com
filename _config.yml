@@ -1,0 +1,84 @@
+# 代码高亮，需要安装rdiscount
+markdown: rdiscount
+highlighter: true
+
+# https://github.com/sidong/Powerful-CMS/Permalinks
+# 文章结构 /分类/标题
+permalink: /blog/:year/:month/:day/:title/
+url: http://Sidong.github.io/Powerful-CMS
+# 部署在Git上的repo名字
+baseurl: 
+# 名字
+author: chng
+# 邮箱
+gmail: ‘zhchngzng@gmail.com'
+# 个人logo文件路径
+logo: /assets/images/chng.png
+# 站点开始时间
+date: 2016-05-14
+
+# 个人信息，用于footer
+# contain:github, gmail, twitter, sina, facebook; lack:gplus
+contacts:
+  - type: github
+    icon: fa-github
+    url: 'https://github.com/chng'
+  - type: gmail
+    icon: fa-pencil
+    url: 'mailto:zhchngzng@gmail.com'
+  - type: twitter
+    icon: fa-twitter
+    url: 'https://twitter.com/zhchngzng'
+  - type: sina
+    icon: fa-weibo
+    url: 'http://weibo.com/zhchngzng'
+  - type: facebook
+    icon: fa-bacebook-square
+    url: 'https://www.facebook.com/zhchngzng'
+
+# 链接，用于导航菜单
+# 包含 about（关于）/articles（文章归档）/tags（标签分类）/feed（feed源）/search（搜索功能）
+links:
+  - title: Home
+    url: /
+    icon: fa-home
+    link: normal
+  - title: About
+    url: /about
+    icon: fa-anchor
+    link: normal
+  - title: tags
+    url: /tags
+    icon: fa-tags
+    link: normal
+  - title: Feed
+    url: /feed.xml
+    icon: fa-rss-square
+    normalLink: false
+    link: feed
+  - title: Old Blogs
+    url: http://cnblogs.com/zhchngzng
+    icon: fa-history
+    link: normal
+  - title: Search
+    icon: fa-search
+    normalLink: false
+    link: search
+
+safe: false
+# Blog标题
+title: chng
+# Blog描述
+description: 쩡지겅의 노트이다
+
+# 开启搜索功能
+search: true
+
+# 开启图片预览功能，未实现，设置为false
+imgPreview: false
+
+# 多说评论
+comments: true
+
+# 时间显示
+showTime: true

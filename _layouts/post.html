@@ -1,0 +1,101 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js"><!--<![endif]-->
+<head>
+{% include head.html %}
+</head>
+
+<body>
+<!-- 
+nav
+	a
+	nav
+		img
+		h1
+		ul - li
+section#search
+	div
+		input
+		ul
+article
+	header
+		hgroup
+			h1
+	section#content
+footer
+	h1
+	nav
+
+ -->
+<!-- <nav></nav> -->
+{% include navigation.html %}
+
+<!-- <section>search</section> -->
+{% include search.html %}
+
+<!-- <section>imgPreview</section> -->
+{% include imgPreview.html %}
+
+<!-- <article></article> -->
+<article id="main" role="main" class="typo typo-selection">
+
+<!-- <header><hgroup><h1></h1></hgroup></header> -->
+<header id="page-header">
+	<hgroup>
+		<h1 class='page-title'>{{page.title}}</h1>
+		<h2 class="page-tag"><i class="fa fa-quote-left fa-lg"></i>
+		{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}
+		</h2>
+		{% if site.showTime %}
+		<h2 class="page-tag"><i class="fa fa-clock-o fa-lg"></i> <span id="timeSpan"></span></h2>
+		{% endif %}
+		<h2 class="page-tag">
+		<i class="fa fa-calendar fg-lg"></i>
+		{% if page.date %}{{page.date | date: "%B %d, %Y"}}{% endif %}
+		</h2>
+		<h2 class="page-tag">
+			<i class="fa fa-tags fa-lg"></i>
+			{% for tag in page.tags %}
+			<a href="{{ site.baseurl }}/tags/#{{ tag | cgi_encode }}" title="Pages tagged {{ tag }}">{{ tag }}</a>
+			{% unless forloop.last %}
+			&nbsp;&bull;&nbsp;
+			{% endunless %}
+		{% endfor %}
+		</h2>
+		<h2 class="page-tag">
+		<i class="fa fa-user fa-lg"></i>
+		<a href="{{site.baseurl}}/about">
+		{% if page.author %}{{page.author}}{% else %}{{site.author}}</a>
+		{% endif %}
+		</h2>
+	</hgroup>
+</header>
+
+<!-- <section></section> -->
+<section id="page-content">
+{{content}}
+</section>
+
+</article>
+
+<!-- comments -->
+{% include comments.html %}
+
+<!-- <footer></footer> -->
+{% include footer.html %}
+
+<!-- scripts -->
+{% include scripts.html %}
+ 
+</body>
+</html>
+
+
+
+<!-- <article></article> -->
+<article class="typo typo-selection">
+
+
+</article>
