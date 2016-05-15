@@ -1,5 +1,5 @@
 # 代码高亮，需要安装rdiscount
-markdown: rdiscount
+markdown: kramdown
 highlighter: true
 
 # https://github.com/sidong/Powerful-CMS/Permalinks
