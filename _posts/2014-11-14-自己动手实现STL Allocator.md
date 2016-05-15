@@ -4,8 +4,8 @@ title: 自己动手实现allocator
 date: 2014-11-14
 categories: C++
 tag:
-	- C++
-	- STL
+  - C++
+  - STL
 	
 ---
 
