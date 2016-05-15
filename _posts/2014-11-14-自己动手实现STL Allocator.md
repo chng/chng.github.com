@@ -15,7 +15,7 @@ tag:
 
 本来一个简单的事情，写完后发现`malloc_alloc`好用，`default_alloc`却不好用，也是，memory pool自然比最naive的`placement new`和`free`要简单了。检查到最后，发现似乎alloc忘记写return res了！加上return运行，走起！发现自己写程序，总是写到最后就忘记return了，果然爱旅行的人还是太年轻，总是忘记回家的路呢。
 
-（PS：`unordered_map`、`auto`和``<<>>`等语法特性需要`std_c++11`的支持哦）
+(PS：`unordered_map`、`auto`和`<<>>`等语法特性需要`std_c++11`的支持哦)
 
 
 ### STL内存分配：
