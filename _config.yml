@@ -1,6 +1,6 @@
 # 代码高亮，需要安装rdiscount
 markdown: kramdown
-highlighter: true
+highlighter: rouge
 
 # https://github.com/sidong/Powerful-CMS/Permalinks
 # 文章结构 /分类/标题
