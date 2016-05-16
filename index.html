@@ -1,12 +1,15 @@
 ---
 layout: page
 title: Lastest Posts
-description: "贪 嗔 痴.<br>try tap ',' '.' 'ESC'."
-tags: [Jekyll, theme, themes, responsive, blog, minimalism]
+description: "贪 嗔 痴.<br>试试快捷键 ',' '.' 'ESC'."
+tags: [me]
 ---
 
 <ul id="post-list" class="post-list">
 {% for post in site.posts %} 
+  {% if post.permalink %}
+    {% continue %}
+  {% endif %}
   <li><article><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }} <span class="entry-date"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time></span></a></article></li>
 {% endfor %}
 </ul>

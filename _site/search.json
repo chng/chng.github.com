@@ -1,11 +1,43 @@
 [
 	
 		{
-		  "title"    : "事件驱动的状态模式",
+		  "title"    : "About chng",
+		  "category" : "Web",
+		  "url"      : "/about/",
+		  "date"     : "May 16, 2016",
+		  "tags"		 : "me"
+		} ,
+	
+		{
+		  "title"    : "事件驱动下的状态模式",
 		  "category" : "",
-		  "url"      : "/blog/2016/05/13/%E4%BA%8B%E4%BB%B6%E9%A9%B1%E5%8A%A8%E7%9A%84%E7%8A%B6%E6%80%81%E6%A8%A1%E5%BC%8F/",
+		  "url"      : "/blog/2016/05/13/%E4%BA%8B%E4%BB%B6%E9%A9%B1%E5%8A%A8%E4%B8%8B%E7%9A%84%E7%8A%B6%E6%80%81%E6%A8%A1%E5%BC%8F/",
 		  "date"     : "May 13, 2016",
 		  "tags"		 : "设计模式 敏捷开发"
+		} ,
+	
+		{
+		  "title"    : "事件驱动下的观察者模式",
+		  "category" : "",
+		  "url"      : "/blog/2015/12/25/%E4%BA%8B%E4%BB%B6%E9%A9%B1%E5%8A%A8%E4%B8%8B%E7%9A%84%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/",
+		  "date"     : "December 25, 2015",
+		  "tags"		 : "Java 设计模式"
+		} ,
+	
+		{
+		  "title"    : "高亮C++中函数的重写",
+		  "category" : "",
+		  "url"      : "/blog/2015/04/25/CPP%E5%87%BD%E6%95%B0%E9%87%8D%E5%86%99%E8%A7%84%E5%88%99/",
+		  "date"     : "April 25, 2015",
+		  "tags"		 : "C++"
+		} ,
+	
+		{
+		  "title"    : "自己动手实现allocator",
+		  "category" : "",
+		  "url"      : "/blog/2014/11/14/%E8%87%AA%E5%B7%B1%E5%8A%A8%E6%89%8B%E5%AE%9E%E7%8E%B0STL-Allocator/",
+		  "date"     : "November 14, 2014",
+		  "tags"		 : "C++ STL"
 		} 
 	
 ]
