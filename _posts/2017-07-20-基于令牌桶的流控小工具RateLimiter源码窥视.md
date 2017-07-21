@@ -1,3 +1,14 @@
+---
+layout: post
+title: 基于令牌桶的流控小工具RateLimiter源码窥视
+date: 2017-07-20
+categories: Java
+tag:
+  - Java
+  - 后端
+
+---
+
 Google Guava的RateLimiter是一个简易的流控工具，近日阅读《京麦京东开发平台的高性能架构之路》一文，提到京东用RateLimiter+zk来做流控，于是资料查了一把，源码看了一波。RateLimiter使用的是一种叫令牌桶的流控算法，RateLimiter会按照一定的频率往桶里扔令牌，线程拿到令牌才能执行，比如你希望自己的应用程序QPS不要超过1000，那么RateLimiter设置1000的速率后，就会每秒往桶里扔1000个令牌。
 
 ~~~java
