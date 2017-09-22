@@ -23,30 +23,30 @@ tag:
 @Documented
 public @interface Transactional {
 
-		// 事务管理器的bean名称
-		@AliasFor("transactionManager")
-		String value() default "";
-		@AliasFor("value")
-		String transactionManager() default "";
+    // 事务管理器的bean名称
+    @AliasFor("transactionManager")
+    String value() default "";
+    @AliasFor("value")
+    String transactionManager() default "";
 
-		// 事务的传播性，即被调用者的事务与调用者的事务之间的关系
-		//默认是REQUIRED，表示如果当前存在事务，则加入到该事务中，否则创建一个新事务
-		Propagation propagation() default Propagation.REQUIRED;
+    // 事务的传播性，即被调用者的事务与调用者的事务之间的关系
+    //默认是REQUIRED，表示如果当前存在事务，则加入到该事务中，否则创建一个新事务
+    Propagation propagation() default Propagation.REQUIRED;
 
-		// 事务的隔离级别，有RR RU RC Serialize四种
-		Isolation isolation() default Isolation.DEFAULT;
+    // 事务的隔离级别，有RR RU RC Serialize四种
+    Isolation isolation() default Isolation.DEFAULT;
 
-		int timeout() default TransactionDefinition.TIMEOUT_DEFAULT;
+    int timeout() default TransactionDefinition.TIMEOUT_DEFAULT;
 
-		boolean readOnly() default false;
+    boolean readOnly() default false;
 
-		// 发生什么异常时进行事务回滚
-		Class<? extends Throwable>[] rollbackFor() default {};
-		String[] rollbackForClassName() default {};
+    // 发生什么异常时进行事务回滚
+    Class<? extends Throwable>[] rollbackFor() default {};
+    String[] rollbackForClassName() default {};
 
-		// 发生什么异常时不进行事务回滚
-		Class<? extends Throwable>[] noRollbackFor() default {};
-		String[] noRollbackForClassName() default {};
+    // 发生什么异常时不进行事务回滚
+    Class<? extends Throwable>[] noRollbackFor() default {};
+    String[] noRollbackForClassName() default {};
 }
 ~~~
 
