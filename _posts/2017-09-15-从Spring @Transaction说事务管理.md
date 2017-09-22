@@ -16,36 +16,37 @@ tag:
 这要从事务以及Transactional的定义说起。点开源码可以看到这个注解的定义如下：
 
 ~~~java
-@Target({ElementType.METHOD, ElementType.TYPE})  // 可以注解在方法或类上，不过spring建议注解在类上，原因与其实现机制有关
+// 可以注解在方法或类上，不过spring建议注解在类上，原因与其实现机制有关
+@Target({ElementType.METHOD, ElementType.TYPE})  
 @Retention(RetentionPolicy.RUNTIME)
 @Inherited
 @Documented
 public @interface Transactional {
 
-			// 事务管理器的bean名称
-@AliasFor("transactionManager")
-String value() default "";
-@AliasFor("value")
-String transactionManager() default "";
+		// 事务管理器的bean名称
+		@AliasFor("transactionManager")
+		String value() default "";
+		@AliasFor("value")
+		String transactionManager() default "";
 
-			// 事务的传播性，即被调用者的事务与调用者的事务之间的关系
-			//默认是REQUIRED，表示如果当前存在事务，则加入到该事务中，否则创建一个新事务
-Propagation propagation() default Propagation.REQUIRED;
+		// 事务的传播性，即被调用者的事务与调用者的事务之间的关系
+		//默认是REQUIRED，表示如果当前存在事务，则加入到该事务中，否则创建一个新事务
+		Propagation propagation() default Propagation.REQUIRED;
 
-			// 事务的隔离级别，有RR RU RC Serialize四种
-Isolation isolation() default Isolation.DEFAULT;
+		// 事务的隔离级别，有RR RU RC Serialize四种
+		Isolation isolation() default Isolation.DEFAULT;
 
-int timeout() default TransactionDefinition.TIMEOUT_DEFAULT;
+		int timeout() default TransactionDefinition.TIMEOUT_DEFAULT;
 
-boolean readOnly() default false;
+		boolean readOnly() default false;
 
-			// 发生什么异常时进行事务回滚
-Class<? extends Throwable>[] rollbackFor() default {};
-String[] rollbackForClassName() default {};
+		// 发生什么异常时进行事务回滚
+		Class<? extends Throwable>[] rollbackFor() default {};
+		String[] rollbackForClassName() default {};
 
-			// 发生什么异常时不进行事务回滚
-Class<? extends Throwable>[] noRollbackFor() default {};
-String[] noRollbackForClassName() default {};
+		// 发生什么异常时不进行事务回滚
+		Class<? extends Throwable>[] noRollbackFor() default {};
+		String[] noRollbackForClassName() default {};
 }
 ~~~
 
@@ -54,7 +55,7 @@ String[] noRollbackForClassName() default {};
 表示一个调用方的事务和被调用方的事务之间的传播关系。
 
 Spring对此的官方解释是：
-![]({{site.baseurl}}/assets/images/CMS/spring-tranaction.png)
+![]({{site.baseurl}}/assets/images/CMS/spring-transaction.png)
 
 - MANDATORY：要求当前在一个事务中，否则抛异常。
 - NESTED：嵌套级别事务，如果上下文中存在事务，则嵌套事务执行，如果不存在事务，则新建事务(和REQUIRED级别一样)。 父事务执行子事务前创建check point，如果子事务回滚了，父事务回到check point继续执行。
