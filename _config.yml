@@ -56,10 +56,6 @@ links:
     icon: fa-rss-square
     normalLink: false
     link: feed
-  - title: Earlier 
-    url: http://cnblogs.com/zhchngzng
-    icon: fa-history
-    link: normal
   - title: Search
     icon: fa-search
     normalLink: false
