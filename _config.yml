@@ -56,7 +56,7 @@ links:
     icon: fa-rss-square
     normalLink: false
     link: feed
-  - title: Old Blogs
+  - title: Earlier 
     url: http://cnblogs.com/zhchngzng
     icon: fa-history
     link: normal
@@ -65,11 +65,11 @@ links:
     normalLink: false
     link: search
 
-safe: false
+safe: true
 # Blog标题
 title: chng
 # Blog描述
-description: 쩡지성의 노트이다
+description: copyright copyleft copywhatever 
 
 # 开启搜索功能
 search: true
@@ -78,7 +78,7 @@ search: true
 imgPreview: false
 
 # 多说评论
-comments: true
+comments: false
 
 # 时间显示
 showTime: true
