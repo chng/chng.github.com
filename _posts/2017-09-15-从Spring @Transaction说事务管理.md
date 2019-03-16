@@ -80,9 +80,9 @@ Spring对此的官方解释是：
 
 rollbackFor表示在抛出何种异常时执行事务的回滚。默认是RuntimeException。如果要捕获所有的异常，应该这么写：
 ~~~java
-@Transactional(rollbackFor = {Exception.class, RuntimeException.class})
+@Transactional(rollbackFor = {Exception.class})
 ~~~
-*注意，Mybatis的很多异常，都是RuntimeExceotion。*
+*注意，MybatisSystemException extends RuntimeExceotion。*
 
 ### 2. propagation是否符合场景
 通常，默认的REQUIRED适用于大多数场景，但也要具体问题具体分析。
@@ -92,7 +92,7 @@ rollbackFor表示在抛出何种异常时执行事务的回滚。默认是Runtim
 @Transactional需要配合事务管理器，才能起作用。不然，谁去创建check point、谁去回滚事务呢？
 
 ~~~java
-@Transactional(value="txManager" rollbackFor = {Exception.class, RuntimeException.class})
+@Transactional(value="txManager" rollbackFor = {Exception.class})
 ~~~
 
 ~~~xml
